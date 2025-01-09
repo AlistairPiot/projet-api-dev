@@ -4,7 +4,7 @@
 
 // router.get("/", platsCtrl.getAllPlats);
 
-// router.post("/", platsCtrl.createPlatById);
+router.post("/", platsCtrl.createPlatById);
 
 // router.get("/:id", platsCtrl.getOnePlat);
 

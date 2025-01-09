@@ -23,7 +23,7 @@ exports.getOnePlat = (req, res, next) => {
 };
 
 // fonction post pour ajouter un plat
-exports.createPlatById = (req, res, next) => {
+exports.createPlat = (req, res, next) => {
     const plat = new Plats({
         ...req.body, // On décompose toutes les données dans le req.body
     });

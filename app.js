@@ -12,7 +12,7 @@ module.exports = app;
 
 mongoose
     .connect(
-        "mongodb+srv://alistairpiot:CIcHMMfHJ3NoXnXl@cluster0.s93c4.mongodb.net/db-api-restaurant?retryWrites=true&w=majority",
+        "mongodb+srv://alistairpiot:lG5AwJIOLo7JSJXA@cluster0.s93c4.mongodb.net/db-api-restaurant?retryWrites=true&w=majority",
         {
             useNewUrlParser: true,
             useUnifiedTopology: true,
@@ -20,3 +20,9 @@ mongoose
     )
     .then(() => console.log("Connexion à MongoDB réussie !"))
     .catch(() => console.log("Connexion à MongoDB échouée !"));
+
+exports.getAllPlats = (req, res, next) => {
+    Plats.find()
+        .then((plats) => res.status(200).json(plats))
+        .catch((error) => res.status(400).json({ error }));
+};

@@ -4,8 +4,6 @@ const express = require("express");
 // on importe le paquet mongoose
 const mongoose = require("mongoose");
 
-const Plats = require("./models/Plats");
-
 // On crée l'application Express
 const app = express();
 
@@ -22,9 +20,3 @@ mongoose
     )
     .then(() => console.log("Connexion à MongoDB réussie !"))
     .catch(() => console.log("Connexion à MongoDB échouée !"));
-
-exports.getAllPlats = (req, res, next) => {
-    Plats.find()
-        .then((plats) => res.status(200).json(plats))
-        .catch((error) => res.status(400).json({ error }));
-};

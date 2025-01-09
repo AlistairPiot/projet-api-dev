@@ -5,5 +5,5 @@
 ### Lancement du serveur :
 
 ```bash
-nodemon
+nodemon server
 ```

@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const userSchema = require("./Users").schema; // Importer uniquement le schéma de User
+const usersSchema = require("./Users").schema; // Importer uniquement le schéma de User
 
 // Cloner le schéma utilisateur pour éviter toute modification accidentelle
-const serveurSchema = new mongoose.Schema(userSchema.obj);
+const serveursSchema = new mongoose.Schema(usersSchema.obj);
 
 // Exporter le modèle Admin
-module.exports = mongoose.model("Serveurs", serveurSchema);
+module.exports = mongoose.model("Serveurs", serveursSchema);

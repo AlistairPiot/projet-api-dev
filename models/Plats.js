@@ -1,25 +1,25 @@
 const mongoose = require('mongoose');
 
 // Définir le schéma
-const usersSchema = new mongoose.Schema({
+const PlatsSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  fisrt_name: {
+  description: {
     type: String,
     required: true,
   },
-  email: {
-    type: String,
+  prix: {
+    type: Float64Array,
     required: true,
     unique: true,
   },
-  password: {
-    type: String,
+  specialite: {
+    type: Boolean,
     required: true,
   },
 
 });
 
-module.exports = mongoose.model('Users', usersSchema);
+module.exports = mongoose.model('Plats', platsSchema);

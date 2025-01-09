@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // Définir le schéma
 const placesSchema = new mongoose.Schema({
   num_tabl: {
-    type: Int32Array,
+    type: Number,
     required: true,
   },
   disponibilite: {

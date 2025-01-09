@@ -4,7 +4,7 @@ const platsCtrl = require("../controllers/platsController.js");
 
 router.get("/", platsCtrl.getAllPlats);
 
-router.post("/", platsCtrl.createPlatById);
+router.post("/", platsCtrl.createPlat);
 
 router.get("/:id", platsCtrl.getOnePlat);
 

@@ -5,7 +5,7 @@ const usersSchema = require("./Users").schema; // Importer uniquement le schéma
 const adminsSchema = new mongoose.Schema(usersSchema.obj);
 
 // Ajouter des propriétés spécifiques à l'admin
-adminSchema.add({
+adminsSchema.add({
     role: {
         type: String,
         default: "admins",

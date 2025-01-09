@@ -19,8 +19,8 @@ mongoose
     .catch(() => console.log("Connexion à MongoDB échouée !"));
 
 // A la place des anciens app.use()
-// app.use("/api/plats", platsRoutes);
-app.use("/api/reservations", reservationsRoutes);
+app.use("/api/plats", platsRoutes);
+// app.use("/api/reservations", reservationsRoutes);
 
 // On export l’application
 module.exports = app;

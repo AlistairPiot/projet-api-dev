@@ -1,15 +1,15 @@
-// const express = require("express");
-// const router = express.Router();
-// const platsCtrl = require("../controllers/platsController.js");
+const express = require("express");
+const router = express.Router();
+const platsCtrl = require("../controllers/platsController.js");
 
-// router.get("/", platsCtrl.getAllPlats);
+router.get("/", platsCtrl.getAllPlats);
 
-// router.post("/", platsCtrl.createPlatById);
+router.post("/", platsCtrl.createPlat);
 
-// router.get("/:id", platsCtrl.getOnePlat);
+router.get("/:id", platsCtrl.getOnePlat);
 
-// router.put("/:id", platsCtrl.updatePlatById);
+router.put("/:id", platsCtrl.updatePlatById);
 
-// router.delete("/:id", platsCtrl.deletePlatById);
-// // // Fin du document
-// module.exports = router;
+router.delete("/:id", platsCtrl.deletePlatById);
+// // Fin du document
+module.exports = router;

@@ -5,7 +5,7 @@ const reservationsCtrl = require("../controllers/reservationsController.js");
 
 router.get("/",reservationsCtrl.getAllReservations);
 
-router.post("/", reservationsCtrl.createReservationById);
+router.post("/", reservationsCtrl.createReservation);
 
 router.get("/:id", reservationsCtrl.getOneReservation);
 

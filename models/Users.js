@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // Définir le schéma
-const userSchema = new mongoose.Schema({
+const usersSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -21,4 +21,4 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("Users", userSchema);
+module.exports = mongoose.model("Users", usersSchema);

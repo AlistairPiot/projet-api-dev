@@ -2,15 +2,14 @@ const express = require("express");
 const router = express.Router();
 const platsCtrl = require("../controllers/platsController.js");
 
+router.get("/", platsCtrl.getAllPlats);
 
-router.get("/",platsCtrl.getAllPlats);
+router.post("/", platsCtrl.createPlatById);
 
-router.post("/", platsCtrl.createPlatsById);
+router.get("/:id", platsCtrl.getOnePlat);
 
-router.get("/:id", platsCtrl.getOnePlats);
+router.put("/:id", platsCtrl.updatePlatById);
 
-router.put("/:id", platsCtrl.updatePlatsById);
-
-router.delete("/:id", platsCtrl.deletePlatsById);
+router.delete("/:id", platsCtrl.deletePlatById);
 // // Fin du document
 module.exports = router;

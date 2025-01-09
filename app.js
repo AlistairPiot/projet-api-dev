@@ -20,7 +20,7 @@ mongoose
 
 // A la place des anciens app.use()
 app.use("/api/plats", platsRoutes);
-app.use("/api/plats", reservationsRoutes);
+app.use("/api/reservations", reservationsRoutes);
 
 // On export l’application
 module.exports = app;

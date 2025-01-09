@@ -5,12 +5,12 @@ const reservationsCtrl = require("../controllers/reservationsController.js");
 
 router.get("/",reservationsCtrl.getAllReservations);
 
-router.post("/", reservationsCtrl.createReservationsById);
+router.post("/", reservationsCtrl.createReservationById);
 
-router.get("/:id", reservationsCtrl.getOneReservations);
+router.get("/:id", reservationsCtrl.getOneReservation);
 
-router.put("/:id", reservationsCtrl.updateReservationsById);
+router.put("/:id", reservationsCtrl.updateReservationById);
 
-router.delete("/:id", reservationsCtrl.deleteReservationsById);
+router.delete("/:id", reservationsCtrl.deleteReservationById);
 // // Fin du document
 module.exports = router;

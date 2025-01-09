@@ -1,5 +1,9 @@
 # Projet API
 
-modif theo
-
 ## Utilisation : framework Express
+
+### Lancement du serveur :
+
+```bash
+nodemon
+```

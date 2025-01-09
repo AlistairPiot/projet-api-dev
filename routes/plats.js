@@ -3,7 +3,7 @@ const router = express.Router();
 const platsCtrl = require("../controllers/platsController.js");
 
 
-router.get("/",platsCtrl.getAllplats);
+router.get("/",platsCtrl.getAllPlats);
 
 router.post("/", platsCtrl.createPlatsById);
 

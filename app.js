@@ -1,14 +1,10 @@
 // on importe le paquet express
 const express = require("express");
-
 // on importe le paquet mongoose
 const mongoose = require("mongoose");
-
+const platsRoutes = require("./routes/plats");
 // On crée l'application Express
 const app = express();
-
-// On export l’application
-module.exports = app;
 
 mongoose
     .connect(
@@ -20,3 +16,9 @@ mongoose
     )
     .then(() => console.log("Connexion à MongoDB réussie !"))
     .catch(() => console.log("Connexion à MongoDB échouée !"));
+
+// A la place des anciens app.use()
+app.use("/plats", platsRoutes);
+
+// On export l’application
+module.exports = app;

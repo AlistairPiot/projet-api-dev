@@ -4,6 +4,8 @@ const express = require("express");
 // on importe le paquet mongoose
 const mongoose = require("mongoose");
 
+const Plats = require("./models/Plats");
+
 // On crée l'application Express
 const app = express();
 

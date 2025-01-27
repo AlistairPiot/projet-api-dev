@@ -77,7 +77,7 @@ exports.loginUser = (req, res, next) =>
         } else {
           res.status(200).json({
             userId: user._id,
-            token: "TOKEN", /* Pour l'instant en dur */
+            token: jwt.sign({ userId: user._id }, "RANDOM_TOKEN_SECRET", { expiresIn: "24h" }),
           });
         }
       })

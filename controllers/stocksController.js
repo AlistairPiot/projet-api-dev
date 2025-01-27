@@ -25,7 +25,8 @@ exports.createStock = (req, res, next) => {
     const stock = new Stocks({
         ...req.body, // On décompose toutes les données dans le req.body
     });
-    stock.save() // On enregistre dans la BDD
+    stock
+        .save() // On enregistre dans la BDD
         .then(() =>
             res.status(201).json({ message: "Le stock vient d'être créé !" })
         )
@@ -41,7 +42,10 @@ exports.deleteStockById = (req, res, next) => {
 
 // fonction put pour modifier un Stock
 exports.updateStockById = (req, res, next) => {
-    Stocks.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+    Stocks.updateOne(
+        { _id: req.params.id },
+        { ...req.body, _id: req.params.id }
+    )
         .then(() => res.status(200).json({ message: "Stock modifié !" }))
         .catch((error) => res.status(400).json({ error }));
 };

@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const platsRoutes = require("./routes/plats.js");
 const reservationsRoutes = require("./routes/reservations.js");
 const stocksRoutes = require("./routes/stocks.js");
-
+const placesRoutes = require("./routes/places.js");
 // On crée l'application Express
 const app = express();
 
@@ -24,6 +24,6 @@ mongoose
 app.use("/api/plats", platsRoutes);
 app.use("/api/reservations", reservationsRoutes);
 app.use("/api/stocks", stocksRoutes);
-
+app.use("/api/places", placesRoutes);
 // On export l’application
 module.exports = app;

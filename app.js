@@ -7,7 +7,9 @@ const reservationsRoutes = require("./routes/reservations.js");
 const stocksRoutes = require("./routes/stocks.js");
 const placesRoutes = require("./routes/places.js");
 const usersRoutes = require("./routes/users.js");
-// const adminsRoutes = require("./routes/admins.js");
+const adminsRoutes = require("./routes/admins.js");
+
+
 // On crée l'application Express
 const app = express();
 
@@ -31,6 +33,6 @@ app.use("/api/reservations", reservationsRoutes);
 app.use("/api/stocks", stocksRoutes);
 app.use("/api/places", placesRoutes);
 app.use("/api/users", usersRoutes);
-// app.use("/api/admins", adminsRoutes);
+app.use("/api/admins", adminsRoutes);
 // On export l’application
 module.exports = app;

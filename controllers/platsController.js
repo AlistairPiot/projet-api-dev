@@ -10,7 +10,7 @@ exports.getAllPlats = (req, res, next) => {
 // fonction get pour récupérer un plat
 exports.getOnePlat = (req, res, next) => {
     Plats.findOne({ _id: req.params.id })
-        .then((plat) =>
+        .then(plat =>
             res.status(200).json({
                 id: plat._id,
                 nom: plat.name,
@@ -27,7 +27,6 @@ exports.createPlat = (req, res, next) => {
     const plat = new Plats({
         ...req.body, // On décompose toutes les données dans le req.body
     });
-    console.log(req.body);
     plat.save() // On enregistre dans la BDD
         .then(() =>
             res.status(201).json({ message: "Le plat vient d'être créé !" })

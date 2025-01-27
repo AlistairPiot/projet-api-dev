@@ -9,6 +9,7 @@ const placesRoutes = require("./routes/places.js");
 const usersRoutes = require("./routes/users.js");
 const adminsRoutes = require("./routes/admins.js");
 const chefsRoutes = require("./routes/chefs.js");
+const receptionnistesRoutes = require("./routes/receptionnistes.js");
 
 
 // On crée l'application Express
@@ -36,5 +37,6 @@ app.use("/api/places", placesRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/admins", adminsRoutes);
 app.use("/api/chefs", chefsRoutes);
+app.use("/api/receptionnistes", receptionnistesRoutes);
 // On export l’application
 module.exports = app;

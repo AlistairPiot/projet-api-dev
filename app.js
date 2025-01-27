@@ -6,8 +6,12 @@ const platsRoutes = require("./routes/plats.js");
 const reservationsRoutes = require("./routes/reservations.js");
 const stocksRoutes = require("./routes/stocks.js");
 const placesRoutes = require("./routes/places.js");
+
 // On crée l'application Express
 const app = express();
+
+// Middleware pour parser les requêtes JSON
+app.use(express.json());
 
 mongoose
     .connect(

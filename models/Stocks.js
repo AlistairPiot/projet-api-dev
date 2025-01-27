@@ -15,4 +15,4 @@ const stocksSchema = new mongoose.Schema({
 });
 stocksSchema.plugin(uniqueValidator);
 
-module.exports = mongoose.model("Stoks", stocksSchema);
+module.exports = mongoose.model("Stocks", stocksSchema);

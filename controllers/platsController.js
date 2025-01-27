@@ -10,10 +10,10 @@ exports.getAllPlats = (req, res, next) => {
 // fonction get pour récupérer un plat
 exports.getOnePlat = (req, res, next) => {
     Plats.findOne({ _id: req.params.id })
-        .then((plat) =>
+        .then(plat =>
             res.status(200).json({
                 id: plat._id,
-                nom: plat.nom,
+                nom: plat.name,
                 description: plat.description,
                 prix: plat.prix,
                 specialite: plat.specialite,

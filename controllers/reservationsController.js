@@ -10,7 +10,7 @@ exports.getAllReservations = (req, res, next) => {
 // fonction get pour récupérer un reservation
 exports.getOneReservation = (req, res, next) => {
     Reservations.findOne({ _id: req.params.id })
-        .then((reservation) =>
+        .then(reservation =>
             res.status(200).json({
                 id: reservation._id,
                 nom: reservation.nom,

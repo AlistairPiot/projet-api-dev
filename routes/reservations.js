@@ -1,16 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const reservationsCtrl = require("../controllers/reservationsController.js");
+const auth = require("./../middleware/auth.js");
 
 
-router.get("/",reservationsCtrl.getAllReservations);
 
-router.post("/", reservationsCtrl.createReservation);
+router.get("/",auth, reservationsCtrl.getAllReservations);
 
-router.get("/:id", reservationsCtrl.getOneReservation);
+router.post("/",auth, reservationsCtrl.createReservation);
 
-router.put("/:id", reservationsCtrl.updateReservationById);
+router.get("/:id",auth, reservationsCtrl.getOneReservation);
 
-router.delete("/:id", reservationsCtrl.deleteReservationById);
+router.put("/:id",auth,reservationsCtrl.updateReservationById);
+
+router.delete("/:id",auth, reservationsCtrl.deleteReservationById);
 // // Fin du document
 module.exports = router;

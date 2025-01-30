@@ -1,16 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const stocksCtrl = require("../controllers/stocksController.js");
+const auth = require("./../middleware/auth.js");
 
 
-router.get("/",stocksCtrl.getAllStocks);
 
-router.post("/", stocksCtrl.createStock);
+router.get("/",auth, stocksCtrl.getAllStocks);
 
-router.get("/:id", stocksCtrl.getOneStock);
+router.post("/",auth, stocksCtrl.createStock);
 
-router.put("/:id", stocksCtrl.updateStockById);
+router.get("/:id",auth,stocksCtrl.getOneStock);
 
-router.delete("/:id", stocksCtrl.deleteStockById);
+router.put("/:id",auth, stocksCtrl.updateStockById);
+
+router.delete("/:id",auth, stocksCtrl.deleteStockById);
 // // Fin du document
 module.exports = router;

@@ -1,15 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const commandesCtrl = require("../controllers/commandesController.js");
+const auth = require("./../middleware/auth.js");
 
-router.get("/", commandesCtrl.getAllCommandes);
 
-router.post("/", commandesCtrl.createCommande);
+router.get("/", auth, commandesCtrl.getAllCommandes);
 
-router.get("/:id", commandesCtrl.getOneCommande);
+router.post("/",auth, commandesCtrl.createCommande);
 
-router.put("/:id", commandesCtrl.updateCommandeById);
+router.get("/:id",auth, commandesCtrl.getOneCommande);
 
-router.delete("/:id", commandesCtrl.deleteCommandeById);
+router.put("/:id",auth, commandesCtrl.updateCommandeById);
+
+router.delete("/:id",auth, commandesCtrl.deleteCommandeById);
 // // Fin du document
 module.exports = router;

@@ -22,14 +22,6 @@
             "description": "Bad Request"
           }
         }
-      },
-      "post": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
       }
     },
     "/api/plats/{id}": {
@@ -426,9 +418,32 @@
     "/api/users/signup": {
       "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -436,9 +451,32 @@
     "/api/users/login": {
       "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -692,7 +730,7 @@
         }
       }
     },
-    "/api/serveurs.js/": {
+    "/api/serveurs/": {
       "get": {
         "description": "",
         "responses": {
@@ -716,7 +754,7 @@
         }
       }
     },
-    "/api/serveurs.js/{id}": {
+    "/api/serveurs/{id}": {
       "get": {
         "description": "",
         "parameters": [

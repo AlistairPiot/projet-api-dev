@@ -22,14 +22,6 @@
             "description": "Bad Request"
           }
         }
-      },
-      "post": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
       }
     },
     "/api/plats/{id}": {
@@ -423,26 +415,6 @@
         }
       }
     },
-    "/api/users/signup": {
-      "post": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/api/users/login": {
-      "post": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/api/admins/": {
       "get": {
         "description": "",
@@ -692,7 +664,7 @@
         }
       }
     },
-    "/api/serveurs.js/": {
+    "/api/serveurs/": {
       "get": {
         "description": "",
         "responses": {
@@ -716,7 +688,7 @@
         }
       }
     },
-    "/api/serveurs.js/{id}": {
+    "/api/serveurs/{id}": {
       "get": {
         "description": "",
         "parameters": [

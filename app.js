@@ -42,6 +42,6 @@ app.use("/api/users", usersRoutes);
 app.use("/api/admins", adminsRoutes);
 app.use("/api/chefs", chefsRoutes);
 app.use("/api/receptionnistes", receptionnistesRoutes);
-app.use("/api/serveurs.js", serveursRoutes);
+app.use("/api/serveurs", serveursRoutes);
 // On export l’application
 module.exports = app;

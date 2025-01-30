@@ -415,6 +415,8 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
     "/api/users/signup": {
       "post": {
         "description": "",
@@ -481,6 +483,7 @@
         }
       }
     },
+>>>>>>> e30c6f61ac0aad7a9642d2aa07d32285cd867bdb
     "/api/admins/": {
       "get": {
         "description": "",

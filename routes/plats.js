@@ -5,7 +5,7 @@ const auth = require("./../middleware/auth.js");
 
 router.get("/", platsCtrl.getAllPlats);
 
-router.post("/", auth.createPlat);
+// router.post("/", auth.createPlat);
 
 router.get("/:id", platsCtrl.getOnePlat);
 

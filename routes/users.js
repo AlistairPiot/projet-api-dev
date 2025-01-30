@@ -12,8 +12,8 @@ router.put("/:id", usersCtrl.updateUserById);
 
 router.delete("/:id", usersCtrl.deleteUserById);
 
-router.post("/signup", userCtrl.signUpUser);
+// router.post("/signup", userCtrl.signUpUser);
 
-router.post("/login", userCtrl.loginUser);
+// router.post("/login", userCtrl.loginUser);
 // // Fin du document
 module.exports = router;

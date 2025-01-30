@@ -6,7 +6,31 @@ exports.getAllStocks = (req, res, next) => {
         .then((stocks) => res.status(200).json(stocks))
         .catch((error) => res.status(400).json({ error }));
 };
+exports.getAllStocks = (req, res) => {
+    let query = {}; // Objet de requête dynamique
 
+    // Ajouter un filtre sur la quantité si elle est fournie
+    if (req.query.quantity) {
+        query.quantity = { $lt: parseInt(req.query.quantity) };
+    }
+
+    // Ajouter un filtre par catégorie (ex: ?category=Electronics)
+    if (req.query.category) {
+        query.category = req.query.category;
+    }
+
+    // Ajouter un filtre par nom (ex: ?name=ProduitX)
+    if (req.query.name) {
+        query.name = new RegExp(req.query.name, 'i'); // Recherche insensible à la casse
+    }
+
+    Stock.find(query, (err, stocks) => {
+        if (err) {
+            return res.status(500).json({ message: "Erreur serveur", error: err });
+        }
+        res.json(stocks);
+    });
+};
 // fonction get pour récupérer un stock
 exports.getOneStock = (req, res, next) => {
     Stocks.findOne({ _id: req.params.id })
@@ -49,3 +73,9 @@ exports.updateStockById = (req, res, next) => {
         .then(() => res.status(200).json({ message: "Stock modifié !" }))
         .catch((error) => res.status(400).json({ error }));
 };
+
+// fonction monitor pour surveiller les stocks faibles
+exports.monitorStock = (req, res ,next) => {
+    Stocks.findById({})
+}
+

@@ -1,4 +1,5 @@
 const Users = require("../models/Users.js");
+const bcrypt = require("bcrypt")
 
 // fonction get pour récupérer tous les users
 exports.getAllUsers = (req, res, next) => {
@@ -53,6 +54,8 @@ exports.signUpUser = (req, res, next) => {
         .hash(req.body.password, 10)
         .then((hash) => {
             const user = new User({
+                name : req.body.name,
+                first_name : req.body.first_name,
                 email: req.body.email,
                 password: hash,
             });

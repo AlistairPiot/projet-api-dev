@@ -11,7 +11,9 @@ const adminsRoutes = require("./routes/admins.js");
 const chefsRoutes = require("./routes/chefs.js");
 const receptionnistesRoutes = require("./routes/receptionnistes.js");
 const serveursRoutes = require("./routes/serveurs.js");
-
+// Importation des packets pour l'utilisation de la documentation swagger
+const swaggerUi = require("swagger-ui-express");
+const swaggerFile = require("./swagger-output.json");
 
 // On crée l'application Express
 const app = express();
@@ -30,6 +32,7 @@ mongoose
     .then(() => console.log("Connexion à MongoDB réussie !"))
     .catch(() => console.log("Connexion à MongoDB échouée !"));
 
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 // A la place des anciens app.use()
 app.use("/api/plats", platsRoutes);
 app.use("/api/reservations", reservationsRoutes);

@@ -1,20 +1,25 @@
 {
-  "name": "projet-api-dev",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "express": "^4.21.2",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.9.3",
-    "mongoose-unique-validator": "^4.0.1",
-    "nodemon": "^3.1.9"
-  }
+    "name": "projet-api-dev",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "swagger": "node ./swagger.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "express": "^4.21.2",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.9.3",
+        "mongoose-unique-validator": "^4.0.1",
+        "nodemon": "^3.1.9",
+        "swagger-ui-express": "^5.0.1"
+    },
+    "devDependencies": {
+        "swagger-autogen": "^2.23.7"
+    }
 }

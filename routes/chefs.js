@@ -1,15 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const chefsCtrl = require("../controllers/chefsController.js");
+const auth = require("./../middleware/auth.js");
 
-router.get("/", chefsCtrl.getAllChefs);
 
-router.post("/", chefsCtrl.createChef);
+router.get("/", auth, chefsCtrl.getAllChefs);
 
-router.get("/:id", chefsCtrl.getOneChef);
+router.post("/",auth,  chefsCtrl.createChef);
 
-router.put("/:id", chefsCtrl.updateChefById);
+router.get("/:id",auth, chefsCtrl.getOneChef);
 
-router.delete("/:id", chefsCtrl.deleteChefById);
+router.put("/:id", auth, chefsCtrl.updateChefById);
+
+router.delete("/:id", auth, chefsCtrl.deleteChefById);
 // // Fin du document
 module.exports = router;

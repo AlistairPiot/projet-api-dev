@@ -5,12 +5,12 @@ const auth = require("./../middleware/auth.js");
 
 router.get("/", platsCtrl.getAllPlats);
 
-// router.post("/", auth.createPlat);
+router.post("/", auth, platsCtrl.createPlat);
 
 router.get("/:id", platsCtrl.getOnePlat);
 
-router.put("/:id", platsCtrl.updatePlatById);
+router.put("/:id", auth, platsCtrl.updatePlatById);
 
-router.delete("/:id", platsCtrl.deletePlatById);
+router.delete("/:id", auth, platsCtrl.deletePlatById);
 // // Fin du document
 module.exports = router;

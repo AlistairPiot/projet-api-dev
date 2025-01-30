@@ -1,15 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const serveursCtrl = require("../controllers/serveursController.js");
+const auth = require("./../middleware/auth.js");
 
-router.get("/", serveursCtrl.getAllServeurs);
+router.get("/",auth, serveursCtrl.getAllServeurs);
 
-router.post("/", serveursCtrl.createServeur);
+router.post("/",auth, serveursCtrl.createServeur);
 
-router.get("/:id", serveursCtrl.getOneServeur);
+router.get("/:id",auth, serveursCtrl.getOneServeur);
 
-router.put("/:id", serveursCtrl.updateServeurById);
+router.put("/:id",auth, serveursCtrl.updateServeurById);
 
-router.delete("/:id", serveursCtrl.deleteServeurById);
+router.delete("/:id",auth, serveursCtrl.deleteServeurById);
 // // Fin du document
 module.exports = router;

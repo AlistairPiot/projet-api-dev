@@ -1,15 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const receptionnistesCtrl = require("../controllers/receptionnistesController.js");
+const auth = require("../middleware/auth.js");
 
-router.get("/", receptionnistesCtrl.getAllReceptionnistes);
+router.get("/",auth, receptionnistesCtrl.getAllReceptionnistes);
 
-router.post("/", receptionnistesCtrl.createReceptionniste);
+router.post("/",auth, receptionnistesCtrl.createReceptionniste);
 
-router.get("/:id", receptionnistesCtrl.getOneReceptionniste);
+router.get("/:id",auth, receptionnistesCtrl.getOneReceptionniste);
 
-router.put("/:id", receptionnistesCtrl.updateReceptionnisteById);
+router.put("/:id",auth, receptionnistesCtrl.updateReceptionnisteById);
 
-router.delete("/:id", receptionnistesCtrl.deleteReceptionnisteById);
+router.delete("/:id",auth, receptionnistesCtrl.deleteReceptionnisteById);
 // // Fin du document
 module.exports = router;

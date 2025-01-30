@@ -1,15 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const placesCtrl = require("../controllers/placesController.js");
+const auth = require("../middleware/auth.js");
 
-router.get("/", placesCtrl.getAllPlaces);
+router.get("/",auth, placesCtrl.getAllPlaces);
 
-router.post("/", placesCtrl.createPlace);
+router.post("/",auth, placesCtrl.createPlace);
 
-router.get("/:id", placesCtrl.getOnePlace);
+router.get("/:id",auth, placesCtrl.getOnePlace);
 
-router.put("/:id", placesCtrl.updatePlaceById);
+router.put("/:id",auth, placesCtrl.updatePlaceById);
 
-router.delete("/:id", placesCtrl.deletePlaceById);
+router.delete("/:id",auth, placesCtrl.deletePlaceById);
 // // Fin du document
 module.exports = router;

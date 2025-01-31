@@ -16,16 +16,6 @@ router.put("/:id",auth, stocksCtrl.updateStockById);
 
 router.delete("/:id",auth, stocksCtrl.deleteStockById);
 
-// route pour obtenier les stocks de faible quantité
-router.get('/low-stock/', (req, res, next) => {
-    Stocks.find({ quantity: { $lt: 500 } }, (err, lowStockItems) => {
-        if (err) {
-            res.status(500).json({ message: 'Erreur serveur', error: err });
-            return;
-        }
-        res.json(lowStockItems);
-    });
-});
 
 // // Fin du document
 module.exports = router;

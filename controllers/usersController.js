@@ -1,4 +1,5 @@
 const Users = require("../models/Users.js");
+const bcrypt = require("bcrypt");
 
 // fonction get pour récupérer tous les users
 exports.getAllUsers = (req, res, next) => {

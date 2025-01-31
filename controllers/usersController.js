@@ -1,5 +1,6 @@
 const Users = require("../models/Users.js");
 const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken");
 
 // fonction get pour récupérer tous les users
 exports.getAllUsers = (req, res, next) => {
@@ -53,7 +54,7 @@ exports.signUpUser = (req, res, next) => {
     bcrypt
         .hash(req.body.password, 10)
         .then((hash) => {
-            const user = new User({
+            const user = new Users({
                 name : req.body.name,
                 first_name : req.body.first_name,
                 email: req.body.email,
@@ -69,7 +70,7 @@ exports.signUpUser = (req, res, next) => {
 };
 
 exports.loginUser = (req, res, next) => {
-    User.findOne({ email: req.body.email })
+    Users.findOne({ email: req.body.email })
         .then((user) => {
             if (user === null) {
                 res.status(401).json({

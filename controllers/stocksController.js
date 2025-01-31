@@ -1,4 +1,6 @@
 const Stocks = require("../models/Stocks.js");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 // fonction get pour récupérer tous les stocks
 exports.getAllStocks = (req, res, next) => {
@@ -6,26 +8,26 @@ exports.getAllStocks = (req, res, next) => {
         .then((stocks) => res.status(200).json(stocks))
         .catch((error) => res.status(400).json({ error }));
 };
-exports.getAllStocks = (req, res, next) => {
-    let query = {}; // Objet de requête dynamique
+// exports.getAllStocks = (req, res, next) => {
+//     let query = {}; // Objet de requête dynamique
 
-    // Ajouter un filtre sur la quantité si elle est fournie
-    if (req.query.quantity) {
-        query.quantity = { $lt: parseInt(req.query.quantity) };
-    }
+//     // Ajouter un filtre sur la quantité si elle est fournie
+//     if (req.query.quantity) {
+//         query.quantity = { $lt: parseInt(req.query.quantity) };
+//     }
 
-    // Ajouter un filtre par nom (ex: ?name=ProduitX)
-    if (req.query.name_ingredient) {
-        query.name_ingredient = new RegExp(req.query.name_ingredient, 'i'); // Recherche insensible à la casse
-    }
+//     // Ajouter un filtre par nom (ex: ?name=ProduitX)
+//     if (req.query.name_ingredient) {
+//         query.name_ingredient = new RegExp(req.query.name_ingredient, 'i'); // Recherche insensible à la casse
+//     }
 
-    Stock.find(query, (err, stocks) => {
-        if (err) {
-            return res.status(500).json({ message: "Erreur serveur", error: err });
-        }
-        res.json(stocks);
-    });
-};
+//     Stock.find(query, (err, stocks) => {
+//         if (err) {
+//             return res.status(500).json({ message: "Erreur serveur", error: err });
+//         }
+//         res.json(stocks);
+//     });
+// };
 // fonction get pour récupérer un stock
 exports.getOneStock = (req, res, next) => {
     Stocks.findOne({ _id: req.params.id })

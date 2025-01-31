@@ -1,9 +1,5 @@
 const Users = require("../models/Users.js");
-<<<<<<< HEAD
 const bcrypt = require("bcrypt");
-=======
-const bcrypt = require("bcrypt")
->>>>>>> 4e0c62e6551b3e5372f231dddb77656b0b667be5
 
 // fonction get pour récupérer tous les users
 exports.getAllUsers = (req, res, next) => {
@@ -58,8 +54,8 @@ exports.signUpUser = (req, res, next) => {
         .hash(req.body.password, 10)
         .then((hash) => {
             const user = new User({
-                name : req.body.name,
-                first_name : req.body.first_name,
+                name: req.body.name,
+                first_name: req.body.first_name,
                 email: req.body.email,
                 password: hash,
             });

@@ -279,6 +279,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "201": {
             "description": "Created"
           },
@@ -621,6 +624,12 @@
               "type": "object",
               "properties": {
                 "password": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "first_name": {
                   "example": "any"
                 },
                 "email": {

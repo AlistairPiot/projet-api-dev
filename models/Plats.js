@@ -14,7 +14,6 @@ const PlatsSchema = new mongoose.Schema({
     prix: {
         type: Number,
         required: true,
-        unique: true,
     },
     specialite: {
         type: Boolean,
